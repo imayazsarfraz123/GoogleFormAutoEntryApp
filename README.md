@@ -1,45 +1,12 @@
-# Google Form Auto Entry App
+# Google Form Auto Entry App v1.0
 
-Android WebView app for loading a Google Form, selecting a CSV file, mapping CSV columns to form questions, filling one row at a time, submitting, and moving to the next record.
+Build APK with GitHub Actions: Actions -> Build Android APK -> Run workflow.
 
-## CSV format
-Export your Excel file as CSV. Example:
+Usage:
+1. Export Excel as CSV.
+2. Open app, paste Google Form URL.
+3. Load CSV.
+4. Enter mappings, one per line: `Google Form Question=CSV Column`.
+5. Open Form, Auto Fill, Submit, Approve Next.
 
-```csv
-CNIC,Name,Phone,Address
-3520112345678,Ali Khan,03001234567,Lahore
-```
-
-## Field mapping inside app
-Write one mapping per line:
-
-```text
-CNIC=CNIC
-Name=Name
-Mobile=Phone
-Address=Address
-```
-
-Left side = Google Form question text.
-Right side = CSV column name.
-
-## GitHub APK build
-1. Upload this full folder to a GitHub repository.
-2. Open GitHub repo.
-3. Go to **Actions**.
-4. Select **Build Android APK**.
-5. Press **Run workflow**.
-6. Download APK from workflow **Artifacts**.
-
-## Codemagic build command
-Use this command:
-
-```bash
-gradle assembleDebug
-```
-
-Artifact path:
-
-```text
-app/build/outputs/**/*.apk
-```
+Limit: Google Forms change internal HTML often; exact question labels must match visible form text.
